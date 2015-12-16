@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+
+
 /**
  * ConcreteRiver.java	A class used for collecting data of a single river
  * 
@@ -24,7 +28,16 @@ public class ConcreteRiver implements ComponentRiver{
 		this.distanceTraveled = distanceTraveled;
 	}
 	
-
+	/**
+	 * toList()					method to create list of component rivers
+	 * 
+	 * @return list				ArrayList of list of rivers
+	 */
+	public List<ComponentRiver> toList(){
+		List<ComponentRiver> list = new ArrayList<ComponentRiver>();
+		list.add(this);
+		return list;
+	}
 	/**
 	 * getRiverName()		method to get the river name
 	 * 
@@ -94,7 +107,6 @@ public class ConcreteRiver implements ComponentRiver{
 		//System.out.println("Then, the "+getRiverName()+" flows into the river.");
 		System.out.println(((int)getRiverFlow())+" L/s flows "+((int)getDistanceTraveled())+" km downstream.");
 
-		
 	}
 
 

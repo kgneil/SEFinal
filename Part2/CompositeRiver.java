@@ -1,4 +1,4 @@
-import java.awt.List;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -14,6 +14,9 @@ public class CompositeRiver implements ComponentRiver{
 	private double riverTotalFlow;
 	private double totalDistanceTraveled;
 	private ArrayList<ComponentRiver> rivers = new ArrayList<ComponentRiver>();
+	private ComponentRiver right;
+	private ComponentRiver left;
+	private List<ComponentRiver> list;
 	
 	
 	/**
@@ -21,9 +24,24 @@ public class CompositeRiver implements ComponentRiver{
 	 * 
 	 * @param rivers	ArrayList of rivers
 	 */
-	public CompositeRiver (ArrayList<ComponentRiver> rivers){
+	public CompositeRiver (ComponentRiver left, ComponentRiver right, ArrayList<ComponentRiver> rivers){
+		this.left = left;
+		this.right = right; 
 		this.rivers = rivers;
 		
+	}
+	
+
+	/**
+	 * toList()					method to create list of component rivers
+	 * 
+	 * @return list				ArrayList of list of rivers
+	 */
+	public List<ComponentRiver> toList(){
+		list = this.left.toList();
+		list.addAll(this.right.toList());
+		list.add(this);
+		return list;
 	}
 	
 	/**
