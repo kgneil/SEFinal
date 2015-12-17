@@ -10,12 +10,12 @@ public class ExploreRiversPart2 {
 	//Private Fields
 	private Scanner input;
 	private double distanceTraveled;
-    private double riverFlows;
+	private double riverFlows;
 	private String riverName;
-    protected static ComponentRiver river;
-    protected static ComponentRiver tribRiver;
-    private ArrayList<ComponentRiver> rivers = new ArrayList<ComponentRiver>();
-    CompositeRiver compositeRiver;
+	protected static ComponentRiver river;
+	protected static ComponentRiver tribRiver;
+	private ArrayList<ComponentRiver> rivers = new ArrayList<ComponentRiver>();
+	CompositeRiver compositeRiver;
 	private double tribRiverFlows;
 	private double tribDistanceTraveled;
     
@@ -25,9 +25,9 @@ public class ExploreRiversPart2 {
 	public ExploreRiversPart2(){
 		input = new Scanner(System.in);
 		System.out.println("You have found the mouth of a new river where it spills into the sea.  What do the natives call this river?");
-        this.riverName = input.nextLine();
-        retrieveFlow();
-        retrieveMainRiver();
+		this.riverName = input.nextLine();
+		retrieveFlow();
+		retrieveMainRiver();
 	}
 	
 	/**
@@ -160,15 +160,15 @@ public class ExploreRiversPart2 {
 	 */
 	public String isEnd(){
 		System.out.println("Did you reach the end of your travels? (y/N)");
-        return input.nextLine();
+		return input.nextLine();
 	}
 	
 	/**
 	 * Unit Testing
 	 */
 	public static void main(String[] args) {
-    	ExploreRiversPart2 er = new ExploreRiversPart2();
-    }
+		ExploreRiversPart2 er = new ExploreRiversPart2();
+	}
 	
 	
 }
